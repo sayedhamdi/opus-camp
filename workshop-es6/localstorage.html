@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>local storage</title>
+</head>
+<body>
+	<h1>Hello , </h1>
+	<input type="text">
+</body>
+<script>
+	let name = localStorage.getItem("name")
+	if (name){
+		document.querySelector("h1").innerText+=name
+	}else{
+		document.querySelector("h1").innerText="enter a name"
+	}
+
+	document.querySelector("input").onkeypress = ()=>{
+		let val = document.querySelector("input").value
+		document.querySelector("h1").innerText= `Hello, ${val}` 
+		localStorage.setItem("name",val)
+	}
+	let obj = {
+		
+		   text:"tabhira",
+		   checked:false
+		}
+</script>
+</html>
